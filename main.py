@@ -22,7 +22,7 @@ st.write(str(len(classes)) + ' classes' + ': '+ ', '.join(classes))
 st.subheader('3. upload the file of the image that you have')
 st.write('accepts only jpg at the time')
 
-uploaded_file = st.file_uploader("Choose a jpg file")
+uploaded_file = st.file_uploader("Choose a jpg file", type='jpeg')
 if uploaded_file is not None:
     st.image(uploaded_file)
 
@@ -33,4 +33,4 @@ if st.button("Classify", type="primary"):
     else:
         with st.spinner('wait for it...'):
             result = clustering(uploaded_file, classes)
-        st.header(result)
+        st.header('this classifies as ' + result)
