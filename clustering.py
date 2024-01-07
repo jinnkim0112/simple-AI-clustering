@@ -1,8 +1,8 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
+# load_dotenv() 
 import base64
 from langchain_openai import ChatOpenAI
 from langchain.schema.messages import HumanMessage, AIMessage
-load_dotenv() 
 
 def encode_image(uploadedImage):
     return base64.b64encode(uploadedImage.read()).decode('utf-8')
